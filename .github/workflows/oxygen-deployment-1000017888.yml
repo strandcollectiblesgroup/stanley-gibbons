@@ -36,7 +36,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install dependencies
-        run: npm run build --prefix /frontend
+        run: npm ci --prefix /frontend
 
       - name: Build and Publish to Oxygen
         run: npx shopify hydrogen deploy --dir=/frontend
