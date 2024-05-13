@@ -29,7 +29,6 @@ interface ProductPageInternalProps {
 export const ProductPageInternal: React.FC<ProductPageInternalProps> = () => {
   const { product } = useProduct();
 
-  // console.log(product.product)
   return (
     <Flex my={2} p={3} bg="white" borderRadius={3} w="100%" pos="relative">
       {product?.featuredImage && (
