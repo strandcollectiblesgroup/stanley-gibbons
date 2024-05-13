@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Codegen.js",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "module": "ES6",
+    "allowJs": true,
+    "noEmit": true
+  }
+}

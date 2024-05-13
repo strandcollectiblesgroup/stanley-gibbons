@@ -1,0 +1,29 @@
+{
+  "name": "@repo/codegen",
+  "version": "0.0.0",
+  "packageManager": "yarn@4.1.1",
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "codegen": "graphql-codegen --config codegen.ts"
+  },
+  "devDependencies": {
+    "@apollo/client": "^3.9.9",
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/client-preset": "4.2.5",
+    "@graphql-codegen/introspection": "4.0.3",
+    "@graphql-codegen/typed-document-node": "^5.0.6",
+    "@graphql-codegen/typescript": "^4.0.6",
+    "@graphql-codegen/typescript-operations": "^4.2.0",
+    "@graphql-codegen/typescript-react-apollo": "^4.3.0",
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "eslint": "^8.57.0",
+    "graphql": "^16.8.1",
+    "typescript": "^5.3.3"
+  },
+  "eslintConfig": {
+    "rules": {
+      "@typescript-eslint/no-unused-vars": "off"
+    }
+  }
+}

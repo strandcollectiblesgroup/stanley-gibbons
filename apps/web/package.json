@@ -1,0 +1,34 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "env-cmd --silent -f ../../.env.local next dev --port 3000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --max-warnings 0"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.9.9",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "framer-motion": "^11.0.20",
+    "graphql": "^16.8.1",
+    "next": "14.1.4",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^14.1.1",
+    "@repo/codegen": "*",
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "@types/eslint": "^8.56.5",
+    "@types/node": "^20.11.24",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3"
+  }
+}
