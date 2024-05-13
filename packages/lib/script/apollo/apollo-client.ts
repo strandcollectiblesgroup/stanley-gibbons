@@ -1,7 +1,6 @@
 import { ApolloClient, InMemoryCache, HttpLink, from } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
 
-
 const httpLink = new HttpLink({
   uri: "http://localhost:3005/graphql", // Replace with your GraphQL endpoint
 });

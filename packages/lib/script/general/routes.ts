@@ -5,6 +5,5 @@ enum EnvTypes {
 }
 
 export enum Routes {
-  HOME = "/"
+  HOME = "/",
 }
-
