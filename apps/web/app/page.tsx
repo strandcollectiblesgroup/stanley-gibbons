@@ -6,10 +6,7 @@ import { GetProducts } from "./components/shopify/get-products";
 export default function Home() {
   return (
     <>
-      <StickyDevNav>
-        <ClientSideComponent />
-        <ServerSideComponent />
-      </StickyDevNav>
+      <StickyDevNav />
       <GetProducts />
     </>
   );

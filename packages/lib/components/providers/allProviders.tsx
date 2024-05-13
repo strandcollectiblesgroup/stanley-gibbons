@@ -1,7 +1,6 @@
 "use client";
 
 import { ChakraUIProvider } from "./chakraProvider";
-import { ApolloUIProvider } from "./apolloProvider";
 import type { NextFont } from "next/dist/compiled/@next/font";
 import { CartProvider } from "@shopify/hydrogen-react";
 
@@ -17,10 +16,8 @@ export function AllProviders({
   bodyFont,
 }: AllProvidersProps): React.ReactNode {
   return (
-    <ApolloUIProvider>
-      <ChakraUIProvider bodyFont={bodyFont} headingFont={headingFont}>
-        <CartProvider>{children}</CartProvider>
-      </ChakraUIProvider>
-    </ApolloUIProvider>
+    <ChakraUIProvider bodyFont={bodyFont} headingFont={headingFont}>
+      <CartProvider>{children}</CartProvider>
+    </ChakraUIProvider>
   );
 }
