@@ -1,13 +1,9 @@
 "use client";
 
 import { Heading, Image, Flex, LinkOverlay } from "@chakra-ui/react";
-import { ProductProvider, useProduct, useCart } from "@shopify/hydrogen-react";
+import { ProductProvider, useProduct } from "@shopify/hydrogen-react";
 import type { Product } from "@shopify/hydrogen-react/storefront-api-types";
 import { Money } from "@shopify/hydrogen-react";
-import {
-  VariantObject,
-  convertVariantToUrlParams,
-} from "@repo/lib/script/shopify/variant-helpers";
 
 interface ProductCardProps {
   product: Product;
@@ -23,13 +19,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
 export const ProductCardInternal: React.FC = () => {
   const { selectedVariant, product } = useProduct();
-  const all = useProduct();
-  const { status } = useCart();
-
-  // @ts-ignore
-  const urlVarientParams = convertVariantToUrlParams(
-    selectedVariant.selectedOptions as VariantObject,
-  );
 
   return (
     <Flex my={2} p={3} bg="white" borderRadius={3} w="100%" pos="relative">
@@ -49,7 +38,7 @@ export const ProductCardInternal: React.FC = () => {
         )}
         {selectedVariant?.selectedOptions && (
           <LinkOverlay
-            href={`/product/${product?.handle}${urlVarientParams}`}
+            href={`/product/${product?.handle}`}
             mt="auto"
             textAlign="right"
           >

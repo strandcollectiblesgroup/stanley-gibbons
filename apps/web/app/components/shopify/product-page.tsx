@@ -1,7 +1,7 @@
 "use client";
 
 import { Heading, Image, Flex, LinkOverlay } from "@chakra-ui/react";
-import { ProductProvider, useProduct, useCart } from "@shopify/hydrogen-react";
+import { ProductProvider, useProduct } from "@shopify/hydrogen-react";
 import type { Product } from "@shopify/hydrogen-react/storefront-api-types";
 import { Money } from "@shopify/hydrogen-react";
 import { VariantObject } from "@repo/lib/script/shopify/variant-helpers";
@@ -27,8 +27,7 @@ interface ProductPageInternalProps {
 }
 
 export const ProductPageInternal: React.FC<ProductPageInternalProps> = () => {
-  const { variants, product } = useProduct();
-  const { status } = useCart();
+  const { product } = useProduct();
 
   // console.log(product.product)
   return (

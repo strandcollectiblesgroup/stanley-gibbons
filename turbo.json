@@ -3,7 +3,10 @@
   "globalDependencies": ["**/.env.*local"],
   "globalEnv": [
     "NEXT_PUBLIC_STAGE",
-    "STAGE"
+    "STAGE",
+    "PUBLIC_STORE_DOMAIN",
+    "PUBLIC_STOREFRONT_API_TOKEN",
+    "PRIVATE_STOREFRONT_API_TOKEN"
   ],
   "pipeline": {
     "build": {
