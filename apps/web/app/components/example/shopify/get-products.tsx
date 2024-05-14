@@ -73,7 +73,7 @@ export const GetProducts: React.FC = async () => {
   // console.log(thing);
 
   return (
-    <Box p={3} mt={4} maxW="600px" mx="auto">
+    <Box p={3} mt={10} maxW="600px" mx="auto">
       <Heading size="md">Products:</Heading>
 
       {nodes.map((product) => {
