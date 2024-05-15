@@ -9,7 +9,7 @@ interface LogoProps {
 export const Logo: React.FC<LogoProps> = ({ color = "inherit" }) => {
   return (
     <Box display="inline-block" color={color}>
-      <Text size="sm" textTransform="uppercase">
+      <Text as="span" size="sm" textTransform="uppercase">
         (Stanley Gibbons)
       </Text>
     </Box>

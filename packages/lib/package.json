@@ -25,6 +25,7 @@
   "dependencies": {
     "@apollo/client": "^3.9.9",
     "@shopify/shopify-api": "^10.0.0",
+    "@tabler/icons-react": "^3.3.0",
     "graphql": "^16.8.1"
   }
 }

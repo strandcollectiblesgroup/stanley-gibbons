@@ -35,9 +35,37 @@ const GRAPHQL_QUERY = `
         }
         variants(first: 1) {
           nodes {
+            availableForSale
+            compareAtPrice {
+              amount
+              currencyCode
+            }
+            id
+            image {
+              __typename
+              id
+              url
+              altText
+              width
+              height
+            }
+            price {
+              amount
+              currencyCode
+            }
+            product {
+              title
+              handle
+            }
             selectedOptions {
               name
               value
+            }
+            sku
+            title
+            unitPrice {
+              amount
+              currencyCode
             }
           }
         }
@@ -69,9 +97,6 @@ const getFromShopify = async () => {
 
 export const GetProducts: React.FC = async () => {
   const { nodes }: { nodes: Product[] } = await getFromShopify();
-
-  // console.log(thing);
-
   return (
     <Box p={3} mt={10} maxW="600px" mx="auto">
       <Heading size="md">Products:</Heading>
