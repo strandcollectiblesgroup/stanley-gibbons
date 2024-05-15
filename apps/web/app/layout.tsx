@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { AllProviders } from "@repo/lib/components/providers";
+import { BasicNav } from "@repo/lib/components";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -9,9 +10,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Clicky Button Pusher | Website app",
-  description:
-    "An app that gives you the power to trigger actions on your computer remotely.",
+  title: "Stanley Gibbons",
+  description: "We buy stamps, you buy stamps. BUY STAMPS!!",
 };
 
 export default function RootLayout({
@@ -23,6 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         <AllProviders bodyFont={roboto} headingFont={roboto}>
+          <BasicNav />
           {children}
         </AllProviders>
       </body>
