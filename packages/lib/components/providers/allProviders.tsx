@@ -18,9 +18,9 @@ export function AllProviders({
   return (
     <ChakraUIProvider bodyFont={bodyFont} headingFont={headingFont}>
       <ShopifyProvider
-        storeDomain="55d517-d8.myshopify.com"
-        storefrontToken="64ba32cf55e4865edd44a903e0767e8a"
-        storefrontApiVersion="2024-04"
+        storeDomain={process.env.NEXT_PUBLIC_STORE_DOMAIN as string}
+        storefrontToken={process.env.NEXT_PUBLIC_STOREFRONT_API_TOKEN as string}
+        storefrontApiVersion={process.env.NEXT_PUBLIC_SHOPIFY_API_VERSION as string}
         countryIsoCode="CA"
         languageIsoCode="EN"
       >
