@@ -4,7 +4,7 @@ import ProductHiddenInput from '../../components/inputs/ProductHidden'
 import ShopifyDocumentStatus from '../../components/media/ShopifyDocumentStatus'
 import {defineField, defineType} from 'sanity'
 import {getPriceRange} from '../../utils/getPriceRange'
-import { GROUPS } from '../../utils/constants'
+import {GROUPS} from '../../utils/constants'
 
 export const productType = defineType({
   name: 'product',

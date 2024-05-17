@@ -2,7 +2,7 @@ import {DocumentIcon} from '@sanity/icons'
 import {defineField} from 'sanity'
 
 import {validateSlug} from '../../utils/validateSlug'
-import { GROUPS } from '../../utils/constants'
+import {GROUPS} from '../../utils/constants'
 
 export const pageType = defineField({
   name: 'page',

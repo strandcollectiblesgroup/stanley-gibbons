@@ -1,7 +1,7 @@
 // Currency code (ISO 4217) to use when displaying prices in the studio
 
-import ShopifyIcon from "../components/icons/Shopify"
-import { ColorWheelIcon, ComposeIcon, SearchIcon } from '@sanity/icons'
+import ShopifyIcon from '../components/icons/Shopify'
+import {ColorWheelIcon, ComposeIcon, SearchIcon} from '@sanity/icons'
 
 // https://en.wikipedia.org/wiki/ISO_4217
 export const DEFAULT_CURRENCY_CODE = 'GBP'
@@ -27,7 +27,7 @@ export const PAGE_REFERENCES = [
 
 // API version to use when using the Sanity client within the studio
 // https://www.sanity.io/help/studio-client-specify-api-version
-export const SANITY_API_VERSION = process.env.SANITY_STUDIO_API_VERSION;
+export const SANITY_API_VERSION = process.env.SANITY_STUDIO_API_VERSION
 
 // Your Shopify store ID.
 // This is the ID in your Shopify admin URL (e.g. 'my-store-name' in https://admin.shopify.com/store/my-store-name).
@@ -46,7 +46,7 @@ export const GROUPS = [
     default: true,
     name: 'editorial',
     title: 'Editorial',
-    icon: ComposeIcon
+    icon: ComposeIcon,
   },
   {
     name: 'shopifySync',
@@ -56,6 +56,6 @@ export const GROUPS = [
   {
     name: 'seo',
     title: 'SEO',
-    icon: SearchIcon
+    icon: SearchIcon,
   },
 ]
