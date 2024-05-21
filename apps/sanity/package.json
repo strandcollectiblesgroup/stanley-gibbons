@@ -44,6 +44,8 @@
     "singleQuote": true
   },
   "workspaces": {
-    "nohoist": ["sanity"]
+    "nohoist": [
+      "**"
+    ]
   }
 }
