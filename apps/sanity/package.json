@@ -42,5 +42,8 @@
     "printWidth": 100,
     "bracketSpacing": false,
     "singleQuote": true
+  },
+  "workspaces": {
+    "nohoist": ["sanity"]
   }
 }
