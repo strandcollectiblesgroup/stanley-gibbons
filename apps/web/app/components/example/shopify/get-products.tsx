@@ -75,6 +75,12 @@ const GRAPHQL_QUERY = `
 `;
 
 const getFromShopify = async () => {
+
+  const headers = client.getPrivateTokenHeaders();
+  const url = client.getStorefrontApiUrl();
+
+  console.log(headers, url);
+
   const response = await fetch(client.getStorefrontApiUrl(), {
     body: JSON.stringify({
       query: GRAPHQL_QUERY,
@@ -85,6 +91,8 @@ const getFromShopify = async () => {
     headers: client.getPrivateTokenHeaders(),
     method: "POST",
   });
+
+
 
   if (!response.ok) {
     throw new Error(response.statusText);
