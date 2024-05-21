@@ -64,7 +64,7 @@ export const productWithVariantType = defineField({
 
           // If both product + product variant are specified,
           // check to see if `product` references this product variant.
-          const result = await getClient({apiVersion: SANITY_API_VERSION}).fetch(
+          const result = await getClient({apiVersion: SANITY_API_VERSION || ''}).fetch(
             `*[_id == $productId && references($productVariantId)][0]._id`,
             {
               productId,
