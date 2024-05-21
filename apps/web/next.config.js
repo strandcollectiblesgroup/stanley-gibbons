@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 
+console.log(process.env);
+
 module.exports = {
   transpilePackages: ["@repo/lib", "@repo/codegen"],
   env: {
