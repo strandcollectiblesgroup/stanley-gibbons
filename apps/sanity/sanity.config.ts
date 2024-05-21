@@ -13,14 +13,12 @@ import Navbar from './components/studio/Navbar'
 
 const devOnlyPlugins = [visionTool()]
 
-console.log('kjahsdjkhaskdjh', process.env)
-
 export default defineConfig({
   name: 'default',
   title: 'Stanley Gibbons',
 
-  projectId: process.env.SANITY_STUDIO_PROJECT_ID || '9ejy4jmc',
-  dataset: process.env.SANITY_STUDIO_DATASET || 'production',
+  projectId: '9ejy4jmc',
+  dataset: 'production',
 
   plugins: [
     structureTool({structure}),
