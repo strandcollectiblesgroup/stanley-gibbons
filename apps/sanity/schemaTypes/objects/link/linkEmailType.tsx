@@ -1,4 +1,5 @@
 import {EnvelopeIcon} from '@sanity/icons'
+import {JSXElementConstructor, ReactElement, ReactNode, ReactPortal} from 'react'
 import {defineField} from 'sanity'
 
 export const linkEmailType = defineField({
@@ -7,7 +8,20 @@ export const linkEmailType = defineField({
   type: 'object',
   icon: EnvelopeIcon,
   components: {
-    annotation: (props) => (
+    annotation: (props: {
+      renderDefault: (
+        arg0: any,
+      ) =>
+        | string
+        | number
+        | boolean
+        | ReactElement<any, string | JSXElementConstructor<any>>
+        | Iterable<ReactNode>
+        | ReactPortal
+        | Iterable<ReactNode>
+        | null
+        | undefined
+    }) => (
       <span>
         <EnvelopeIcon
           style={{

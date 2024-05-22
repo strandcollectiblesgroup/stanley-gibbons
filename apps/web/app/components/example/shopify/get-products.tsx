@@ -86,8 +86,6 @@ const getFromShopify = async () => {
     method: "POST",
   });
 
-
-
   if (!response.ok) {
     throw new Error(response.statusText);
   }
