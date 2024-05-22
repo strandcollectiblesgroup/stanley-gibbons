@@ -51,4 +51,13 @@ export default defineConfig({
       navbar: Navbar,
     },
   },
+
+  graphql: [
+    {
+      playground: false,
+      tag: 'live',
+      workspace: 'production',
+      id: 'schema-production',
+    },
+  ],
 })

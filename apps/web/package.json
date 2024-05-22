@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "env-cmd --silent -f ../../.env.local next dev",
+    "dev": "env-cmd --silent -f ../../.env next dev",
     "build": "env-cmd --silent -f ../../.env next build",
     "start": "next start",
     "lint": "eslint . --max-warnings 0"
