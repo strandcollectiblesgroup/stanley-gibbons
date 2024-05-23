@@ -2,7 +2,7 @@ import { ApolloClient, InMemoryCache, HttpLink, from } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
 
 const httpLink = new HttpLink({
-  uri: "http://localhost:3005/graphql", // Replace with your GraphQL endpoint
+  uri: process.env.NEXT_PUBLIC_SANITY_GQL_API,
 });
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
@@ -13,7 +13,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (networkError) console.log(`Network error: ${networkError}`);
 });
 
-export const apolloClient = new ApolloClient({
+export const apolloSanityClient = new ApolloClient({
   link: from([errorLink, httpLink]),
   cache: new InMemoryCache(),
 });
