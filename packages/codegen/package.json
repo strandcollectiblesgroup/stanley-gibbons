@@ -4,7 +4,8 @@
   "packageManager": "yarn@4.1.1",
   "scripts": {
     "lint": "eslint . --max-warnings 0",
-    "codegen": "graphql-codegen --config codegen.ts"
+    "codegen:sanity": "env-cmd --silent -f ../../.env graphql-codegen --config config-sanity.ts",
+    "codegen:backend": "env-cmd --silent -f ../../.env graphql-codegen --config config-backend.ts"
   },
   "devDependencies": {
     "@apollo/client": "^3.9.9",

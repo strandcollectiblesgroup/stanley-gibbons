@@ -1,0 +1,8 @@
+query demoProducts {
+  allProduct(where: { store: { status: { eq: "active" } } }) {
+    store {
+      status
+      title
+    }
+  }
+}
