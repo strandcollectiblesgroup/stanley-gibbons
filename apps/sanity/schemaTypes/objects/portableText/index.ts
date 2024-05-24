@@ -1,9 +1,4 @@
-import { portableTextType } from "./portableTextType"
-import { portableTextSimpleType } from "./portableTextSimpleType"
+import {portableTextType} from './portableTextType'
+import {portableTextSimpleType} from './portableTextSimpleType'
 
-
-
-export default [
-  portableTextType,
-  portableTextSimpleType
-]
+export default [portableTextType, portableTextSimpleType]

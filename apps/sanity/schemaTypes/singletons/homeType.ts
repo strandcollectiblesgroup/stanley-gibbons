@@ -14,9 +14,7 @@ export const homeType = defineField({
     defineField({
       name: 'modules',
       type: 'array',
-      of: [
-        defineArrayMember({type: 'hero'}),
-      ],
+      of: [defineArrayMember({type: 'hero'})],
       group: 'editorial',
     }),
     defineField({

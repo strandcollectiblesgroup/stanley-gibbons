@@ -40,9 +40,7 @@ export const collectionType = defineType({
       name: 'modules',
       type: 'array',
       description: 'Editorial modules to associate with this collection',
-      of: [
-        defineArrayMember({type: 'hero'}),
-      ],
+      of: [defineArrayMember({type: 'hero'})],
       group: 'editorial',
     }),
     defineField({

@@ -1,14 +1,27 @@
 import {EarthGlobeIcon} from '@sanity/icons'
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from 'react'
-import { defineField } from "sanity";
+import {ReactElement, JSXElementConstructor, ReactNode, ReactPortal} from 'react'
+import {defineField} from 'sanity'
 
 export const linkExternalType = defineField({
-  title: "External Link",
-  name: "linkExternal",
-  type: "object",
+  title: 'External Link',
+  name: 'linkExternal',
+  type: 'object',
   icon: EarthGlobeIcon,
   components: {
-    annotation: (props: { renderDefault: (arg0: any) => string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Iterable<ReactNode> | null | undefined }) => (
+    annotation: (props: {
+      renderDefault: (
+        arg0: any,
+      ) =>
+        | string
+        | number
+        | boolean
+        | ReactElement<any, string | JSXElementConstructor<any>>
+        | Iterable<ReactNode>
+        | ReactPortal
+        | Iterable<ReactNode>
+        | null
+        | undefined
+    }) => (
       <span>
         <EarthGlobeIcon
           style={{

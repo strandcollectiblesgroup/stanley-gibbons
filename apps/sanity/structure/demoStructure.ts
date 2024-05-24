@@ -5,9 +5,5 @@ export default defineStructure<ListItemBuilder>((S) =>
   S.listItem()
     .title('Demos')
     .schemaType('demo')
-    .child(
-      S.editor()
-        .schemaType('demo')
-        .documentId('demo')
-    ),
+    .child(S.editor().schemaType('demo').documentId('demo')),
 )
