@@ -1,6 +1,5 @@
 import {ListItemBuilder, StructureResolver} from 'sanity/structure'
 import collections from './collectionStructure'
-import colorThemes from './colorThemeStructure'
 import home from './homeStructure'
 import pages from './pageStructure'
 import products from './productStructure'
@@ -30,7 +29,6 @@ const hiddenDocTypes = (listItem: ListItemBuilder) => {
 
   return ![
     'collection',
-    'colorTheme',
     'home',
     'media.tag',
     'page',

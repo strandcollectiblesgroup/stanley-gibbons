@@ -38,11 +38,6 @@ export const SHOPIFY_STORE_ID = ''
 // Field groups used through schema types
 export const GROUPS = [
   {
-    name: 'theme',
-    title: 'Theme',
-    icon: ColorWheelIcon,
-  },
-  {
     default: true,
     name: 'editorial',
     title: 'Editorial',

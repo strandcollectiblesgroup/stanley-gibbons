@@ -91,12 +91,11 @@ import {portableTextSimpleType} from './portableText/portableTextSimpleType'
 const blocks = [portableTextType, portableTextSimpleType]
 
 import {collectionType} from './documents/collection'
-import {colorThemeType} from './documents/colorTheme'
 import {pageType} from './documents/page'
 import {productType} from './documents/product'
 import {productVariantType} from './documents/productVariant'
 
-const documents = [collectionType, colorThemeType, pageType, productType, productVariantType]
+const documents = [collectionType, pageType, productType, productVariantType]
 
 import {homeType} from './singletons/homeType'
 import {settingsType} from './singletons/settingsType'

@@ -37,35 +37,6 @@ export const collectionType = defineType({
       options: {field: 'store.slug.current'},
     }),
     defineField({
-      name: 'colorTheme',
-      type: 'reference',
-      to: [{type: 'colorTheme'}],
-      group: 'theme',
-    }),
-    defineField({
-      name: 'vector',
-      title: 'Vector artwork',
-      type: 'image',
-      description: 'Displayed in collection links using color theme',
-      options: {
-        accept: 'image/svg+xml',
-      },
-      group: 'theme',
-      validation: (Rule) =>
-        Rule.custom((image) => {
-          if (!image?.asset?._ref) {
-            return true
-          }
-
-          const format = getExtension(image.asset._ref)
-
-          if (format !== 'svg') {
-            return 'Image must be an SVG'
-          }
-          return true
-        }),
-    }),
-    defineField({
       name: 'showHero',
       type: 'boolean',
       description: 'If disabled, page title will be displayed instead',
