@@ -1,13 +1,14 @@
 import {TagIcon} from '@sanity/icons'
-import {defineField} from 'sanity'
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from 'react'
+import { defineField } from "sanity";
 
 export const linkProductType = defineField({
-  title: 'Product',
-  name: 'linkProduct',
-  type: 'object',
+  title: "Product",
+  name: "linkProduct",
+  type: "object",
   icon: TagIcon,
   components: {
-    annotation: (props) => (
+    annotation: (props: { renderDefault: (arg0: any) => string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Iterable<ReactNode> | null | undefined }) => (
       <span>
         <TagIcon
           style={{

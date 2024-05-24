@@ -2,7 +2,7 @@ import {HomeIcon} from '@sanity/icons'
 import {defineArrayMember, defineField} from 'sanity'
 import {GROUPS} from '../../utils/constants'
 
-const TITLE = 'Home Run'
+const TITLE = 'Home'
 
 export const homeType = defineField({
   name: 'home',

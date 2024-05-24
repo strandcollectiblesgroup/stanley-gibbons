@@ -37,26 +37,11 @@ export const collectionType = defineType({
       options: {field: 'store.slug.current'},
     }),
     defineField({
-      name: 'showHero',
-      type: 'boolean',
-      description: 'If disabled, page title will be displayed instead',
-      group: 'editorial',
-    }),
-    defineField({
-      name: 'hero',
-      type: 'hero',
-      hidden: ({document}) => !document?.showHero,
-      group: 'editorial',
-    }),
-    defineField({
       name: 'modules',
       type: 'array',
       description: 'Editorial modules to associate with this collection',
       of: [
-        defineArrayMember({type: 'callout'}),
-        defineArrayMember({type: 'callToAction'}),
-        defineArrayMember({type: 'image'}),
-        defineArrayMember({type: 'instagram'}),
+        defineArrayMember({type: 'hero'}),
       ],
       group: 'editorial',
     }),
