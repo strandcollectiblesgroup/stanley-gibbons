@@ -25,8 +25,19 @@ export const demoType = defineField({
       validation: validateSlug,
     }),
     defineField({
+      name: 'featuredImage',
+      type: 'defaultImage',
+      group: 'editorial',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'body',
       type: 'portableText',
+      group: 'editorial',
+    }),
+    defineField({
+      name: 'button',
+      type: 'defaultButton',
       group: 'editorial',
     }),
     defineField({
@@ -36,16 +47,4 @@ export const demoType = defineField({
       group: 'seo',
     }),
   ],
-  preview: {
-    select: {
-      seoImage: 'seo.image',
-      title: 'title',
-    },
-    prepare({seoImage, title}) {
-      return {
-        media: seoImage ?? DiamondIcon,
-        title,
-      }
-    },
-  },
 })

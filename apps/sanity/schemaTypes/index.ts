@@ -8,6 +8,7 @@ import linkObjects from './objects/link'
 import globalObjects from './objects/global'
 import customProductObjects from './objects/customProductOption'
 import collectionObjects from './objects/collection'
+import conponentObject from './objects/components'
 
 const objects = [
   ...shopifyObjects,
@@ -17,6 +18,7 @@ const objects = [
   ...customProductObjects,
   ...collectionObjects,
   ...portableTextObjects,
+  ...conponentObject,
 ]
 
 export const schemaTypes = [...objects, ...singletons, ...documents]
