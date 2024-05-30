@@ -28,16 +28,17 @@ export const demoType = defineField({
       name: 'featuredImage',
       type: 'defaultImage',
       group: 'editorial',
-      validation: (Rule) => Rule.required(),
+      // validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'featuredVideo',
+      type: 'defaultVideo',
+      group: 'editorial',
+      // validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'body',
       type: 'portableText',
-      group: 'editorial',
-    }),
-    defineField({
-      name: 'button',
-      type: 'defaultButton',
       group: 'editorial',
     }),
     defineField({

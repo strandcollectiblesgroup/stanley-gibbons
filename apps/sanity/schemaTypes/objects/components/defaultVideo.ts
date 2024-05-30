@@ -1,7 +1,7 @@
 import {defineField} from 'sanity'
 
-export const defaultImageType = defineField({
-  name: 'defaultImage',
+export const defaultVideoType = defineField({
+  name: 'defaultVideo',
   type: 'object',
   fields: [
     defineField({
@@ -24,6 +24,16 @@ export const defaultImageType = defineField({
           validation: (Rule) => Rule.required(),
         }),
       ],
+    }),
+    defineField({
+      name: 'video',
+      type: 'string',
+      validation: (Rule) => Rule.custom((value) => {
+        if (!value?.includes('youtube')) {
+          return "Can only submit a Youtube video"
+        }
+        return true
+      }),
     }),
   ],
 })
