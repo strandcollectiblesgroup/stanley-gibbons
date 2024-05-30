@@ -21,12 +21,12 @@ export const defaultButtonType = defineField({
       initialValue: 'primary',
       options: {
         list: [
-          { title: 'Primary', value: 'primary' },
-          { title: 'Secondary', value: 'secondary' },
+          {title: 'Primary', value: 'primary'},
+          {title: 'Secondary', value: 'secondary'},
         ],
-        layout: 'radio'
+        layout: 'radio',
       },
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       title: 'Link Type',
@@ -35,36 +35,36 @@ export const defaultButtonType = defineField({
       initialValue: 'internal',
       options: {
         list: [
-          { title: 'Internal', value: 'internal' },
-          { title: 'External', value: 'external' },
+          {title: 'Internal', value: 'internal'},
+          {title: 'External', value: 'external'},
         ],
-        layout: 'radio'
+        layout: 'radio',
       },
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       title: 'Link',
       name: 'linkExternal',
       type: 'linkExternal',
-      hidden: ({ document }) => {
+      hidden: ({document}) => {
         if (document?.button) {
           // @ts-ignore
           return document.button.linkType !== 'internal'
         }
-        return true;
-      }
+        return true
+      },
     }),
     defineField({
       title: 'Link',
       name: 'linkInternal',
       type: 'linkInternal',
-      hidden: ({ document }) => {
+      hidden: ({document}) => {
         if (document?.button) {
           // @ts-ignore
           return document.button.linkType !== 'external'
         }
-        return true;
-      }
-    })
+        return true
+      },
+    }),
   ],
 })

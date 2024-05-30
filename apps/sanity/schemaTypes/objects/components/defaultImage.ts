@@ -15,9 +15,9 @@ export const defaultImageType = defineField({
         defineField({
           name: 'alt',
           type: 'string',
-          validation: (Rule) =>  Rule.required()
+          validation: (Rule) => Rule.required(),
         }),
-      ]
+      ],
     }),
   ],
 })
