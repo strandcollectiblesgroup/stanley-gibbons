@@ -1,4 +1,4 @@
-import {defineField} from 'sanity'
+import { defineArrayMember, defineField } from "sanity";
 import {} from '@sanity/icons'
 
 export const defaultButtonType = defineField({
@@ -13,6 +13,13 @@ export const defaultButtonType = defineField({
       title: 'Label',
       name: 'label',
       type: 'string',
+      validation: (Rule) => Rule.custom((value, context) => {
+        // @ts-ignore
+        if (context?.parent && context.parent.link && !value) {
+          return "A label is required"
+        }
+        return true;
+      }),
     }),
     defineField({
       title: 'Button Style',
@@ -26,45 +33,39 @@ export const defaultButtonType = defineField({
         ],
         layout: 'radio',
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.custom((value, context) => {
+        // @ts-ignore
+        const label =( context?.parent?.label as string || '');
+        if (!label && !value) {
+          return "Select your button style type"
+        }
+        return true;
+      }),
     }),
     defineField({
-      title: 'Link Type',
-      name: 'linkType',
-      type: 'string',
-      initialValue: 'internal',
+      name: 'link',
+      type: 'array',
       options: {
-        list: [
-          {title: 'Internal', value: 'internal'},
-          {title: 'External', value: 'external'},
-        ],
-        layout: 'radio',
+        modal: {
+          type: "dialog"
+        },
       },
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      title: 'Link',
-      name: 'linkExternal',
-      type: 'linkExternal',
-      hidden: ({document}) => {
-        if (document?.button) {
-          // @ts-ignore
-          return document.button.linkType !== 'internal'
+      of: [
+        defineArrayMember({type: 'linkExternal'}),
+        defineArrayMember({type: 'linkInternal'})
+      ],
+
+      validation: (Rule) => Rule.custom((value, context) => {
+        // @ts-ignore
+        const label =( context?.parent?.label as string || '');
+        if (label && !value) {
+          return "Please select your button style type"
         }
-        return true
-      },
-    }),
-    defineField({
-      title: 'Link',
-      name: 'linkInternal',
-      type: 'linkInternal',
-      hidden: ({document}) => {
-        if (document?.button) {
-          // @ts-ignore
-          return document.button.linkType !== 'external'
+        if (value && value.length > 1) {
+          return "Can only add one link type at a time"
         }
-        return true
-      },
+        return true;
+      }),
     }),
   ],
 })
