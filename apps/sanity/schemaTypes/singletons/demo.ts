@@ -1,5 +1,5 @@
 import {DiamondIcon} from '@sanity/icons'
-import {defineField} from 'sanity'
+import {defineField, defineArrayMember} from 'sanity'
 
 import {validateSlug} from '../../utils/validateSlug'
 import {GROUPS} from '../../utils/constants'
@@ -24,28 +24,37 @@ export const demoType = defineField({
       options: {source: 'title'},
       validation: validateSlug,
     }),
-    defineField({
-      name: 'featuredImage',
-      type: 'defaultImage',
-      group: 'editorial',
-      // validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'featuredVideo',
-      type: 'defaultVideo',
-      group: 'editorial',
-      // validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'body',
-      type: 'portableText',
-      group: 'editorial',
-    }),
+    // defineField({
+    //   name: 'featuredImage',
+    //   type: 'defaultImage',
+    //   group: 'editorial',
+    //   validation: (Rule) => Rule.required(),
+    // }),
+    // defineField({
+    //   name: 'featuredVideo',
+    //   type: 'defaultVideo',
+    //   group: 'editorial',
+    //   validation: (Rule) => Rule.required(),
+    // }),
+    // defineField({
+    //   name: 'body',
+    //   type: 'portableText',
+    //   group: 'editorial',
+    // }),
     defineField({
       name: 'seo',
       title: 'SEO',
       type: 'seo',
       group: 'seo',
+    }),
+    defineField({
+      name: 'modules',
+      type: 'array',
+      group: 'editorial',
+      of: [
+        defineArrayMember({type: 'mediaAndTextModule'}),
+        defineArrayMember({type: 'defaultImage'}),
+      ],
     }),
   ],
 })

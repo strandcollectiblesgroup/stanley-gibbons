@@ -9,13 +9,7 @@ export const defaultImageType = defineField({
       type: 'image',
       options: {
         hotspot: true,
-        metadata: [
-          'blurhash',
-          'lqip',
-          'palette',
-          'exif',
-          'location',
-        ],
+        metadata: ['blurhash', 'lqip', 'palette', 'exif', 'location'],
       },
       fields: [
         defineField({

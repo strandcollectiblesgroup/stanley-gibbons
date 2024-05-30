@@ -9,13 +9,7 @@ export const defaultVideoType = defineField({
       type: 'image',
       options: {
         hotspot: true,
-        metadata: [
-          'blurhash',
-          'lqip',
-          'palette',
-          'exif',
-          'location',
-        ],
+        metadata: ['blurhash', 'lqip', 'palette', 'exif', 'location'],
       },
       fields: [
         defineField({
@@ -28,12 +22,13 @@ export const defaultVideoType = defineField({
     defineField({
       name: 'video',
       type: 'string',
-      validation: (Rule) => Rule.custom((value) => {
-        if (!value?.includes('youtube')) {
-          return "Can only submit a Youtube video"
-        }
-        return true
-      }),
+      validation: (Rule) =>
+        Rule.custom((value) => {
+          if (!value?.includes('youtube')) {
+            return 'Can only submit a Youtube video'
+          }
+          return true
+        }),
     }),
   ],
 })
