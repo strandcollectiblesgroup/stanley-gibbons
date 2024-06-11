@@ -52,7 +52,10 @@ export const defaultButtonType = defineField({
           type: 'dialog',
         },
       },
-      of: [defineArrayMember({type: 'linkExternal'}), defineArrayMember({type: 'linkInternal'})],
+      of: [
+        defineArrayMember({type: 'linkExternal'}),
+        defineArrayMember({type: 'linkInternal'})
+      ],
 
       validation: (Rule) =>
         Rule.custom((value, context) => {
