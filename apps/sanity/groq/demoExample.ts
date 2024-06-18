@@ -1,5 +1,5 @@
-import { mediaAndTextModuleQuery, slugFragment } from "./demoComponents"
-import { seoFragment } from "./seo"
+import { seoFragment, mediaAndTextModuleQuery, slugFragment } from "./fragments"
+
 import groq from 'groq';
 
 export const demoPageQuery = groq`*[_type == "demo"]{
@@ -7,6 +7,7 @@ export const demoPageQuery = groq`*[_type == "demo"]{
   _id,
   _rev,
   _type,
+  title,
   modules[] {
     _key,
     _type,
@@ -16,6 +17,4 @@ export const demoPageQuery = groq`*[_type == "demo"]{
   },
   ${seoFragment},
   ${slugFragment},
-  title,
-  _updatedAt
 }`
