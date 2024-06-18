@@ -4,7 +4,7 @@ export const client = sanityClient({
   projectId: process.env.SANITY_STUDIO_PROJECT_ID,
   dataset: process.env.SANITY_STUDIO_DATASET,
   useCdn: true,
-  apiVersion: "2024-05-16",
+  apiVersion: process.env.SANITY_STUDIO_API_VERSION,
 });
 
 export async function fetchSanityData<T>(
