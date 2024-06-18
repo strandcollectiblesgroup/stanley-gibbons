@@ -729,12 +729,13 @@ export type HslaColor = {
 export declare const internalGroqTypeReferenceTo: unique symbol
 // Source: ./groq/demoExample.ts
 // Variable: demoPageQuery
-// Query: *[_type == "demo"]{  _createdAt,  _id,  _rev,  _type,  modules[] {    _key,    _type,    _type == "mediaAndTextModule" => {        title,    body[]{    _key,    _type,    children[]{      _key,      _type,      marks,      text    },    markDefs,    style  },  cta {      _type,  buttonStyle,  label,  link[0] {    _key,    _type,    _type == "linkInternal" => {        ...reference-> {    _id,    _type,    _type == "product" => {      store {          "slug": slug.current      }    },    _type != "product" => {        "slug": slug.current    },  }    },    _type == "linkExternal" => {        newWindow,  url    },  }  },  media {      featuredMedia[0] {    _key,    _type,    _type == "defaultImage" => {        image {    _key,    _type,    alt,    asset -> {      _ref,      _type,      url    }  }    },    _type == "defaultVideo" => {          image {    _key,    _type,    alt,    asset -> {      _ref,      _type,      url    }  },  video    }  }  }    }  },  seo {    _type,    image{      _type,      asset->{        _ref,        _type      }    }  },    "slug": slug.current,  title,  _updatedAt}
+// Query: *[_type == "demo"]{  _createdAt,  _id,  _rev,  _type,  title,  modules[] {    _key,    _type,    _type == "mediaAndTextModule" => {        title,    body[]{    _key,    _type,    children[]{      _key,      _type,      marks,      text    },    markDefs,    style  },  cta {      _type,  buttonStyle,  label,  link[0] {    _key,    _type,    _type == "linkInternal" => {        ...reference-> {    _id,    _type,    _type == "product" => {      store {          "slug": slug.current      }    },    _type != "product" => {        "slug": slug.current    },  }    },    _type == "linkExternal" => {        newWindow,  url    },  }  },  media {      featuredMedia[0] {    _key,    _type,    _type == "defaultImage" => {        image {    _key,    _type,    alt,    asset -> {      _ref,      _type,      url    }  }    },    _type == "defaultVideo" => {          image {    _key,    _type,    alt,    asset -> {      _ref,      _type,      url    }  },  video    }  }  }    }  },  seo {    _type,    image{      _type,      asset->{        _ref,        _type      }    }  },    "slug": slug.current,}
 export type DemoPageQueryResult = Array<{
   _createdAt: string
   _id: string
   _rev: string
   _type: 'demo'
+  title: string | null
   modules: Array<
     | {
         _key: string
@@ -843,6 +844,4 @@ export type DemoPageQueryResult = Array<{
     } | null
   } | null
   slug: string | null
-  title: string | null
-  _updatedAt: string
 }>

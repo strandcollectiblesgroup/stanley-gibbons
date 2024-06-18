@@ -1,4 +1,6 @@
-import { seoFragment, mediaAndTextModuleQuery, slugFragment } from "./fragments"
+import { seoFragment } from "./fragments/seo"
+import { slugFragment } from "./fragments/general"
+import { mediaAndTextModuleQuery } from "./fragments/modules"
 
 import groq from 'groq';
 

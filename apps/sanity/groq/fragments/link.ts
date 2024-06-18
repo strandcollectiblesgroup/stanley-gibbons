@@ -1,4 +1,4 @@
-import { slugFragment } from "./index"
+import { slugFragment } from "./general"
 export const linkExternalFragment = `
   newWindow,
   url
