@@ -1,7 +1,7 @@
 "use client";
 
 import { ApolloProvider } from "@apollo/client";
-import { apolloSanityClient } from "../../script/sanity/apollo-sanity-client";
+import { apolloClient } from "../../script/apollo/apollo-client";
 
 interface ApolloUIProviderProps {
   children?: React.ReactNode;
@@ -11,6 +11,6 @@ export function ApolloUIProvider({
   children,
 }: ApolloUIProviderProps): React.ReactNode {
   return (
-    <ApolloProvider client={apolloSanityClient}>{children}</ApolloProvider>
+    <ApolloProvider client={apolloClient}>{children}</ApolloProvider>
   );
 }

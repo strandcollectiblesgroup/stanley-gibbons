@@ -3,7 +3,6 @@
 import { ChakraUIProvider } from "./chakraProvider";
 import type { NextFont } from "next/dist/compiled/@next/font";
 import { CartProvider, ShopifyProvider } from "@shopify/hydrogen-react";
-import { ApolloUIProvider } from "./apolloProvider";
 
 interface AllProvidersProps {
   children?: React.ReactNode;
@@ -17,22 +16,20 @@ export function AllProviders({
   bodyFont,
 }: AllProvidersProps): React.ReactNode {
   return (
-    <ApolloUIProvider>
-      <ChakraUIProvider bodyFont={bodyFont} headingFont={headingFont}>
-        <ShopifyProvider
-          storeDomain={process.env.NEXT_PUBLIC_STORE_DOMAIN as string}
-          storefrontToken={
-            process.env.NEXT_PUBLIC_STOREFRONT_API_TOKEN as string
-          }
-          storefrontApiVersion={
-            process.env.NEXT_PUBLIC_SHOPIFY_API_VERSION as string
-          }
-          countryIsoCode="CA"
-          languageIsoCode="EN"
-        >
-          <CartProvider>{children}</CartProvider>
-        </ShopifyProvider>
-      </ChakraUIProvider>
-    </ApolloUIProvider>
+    <ChakraUIProvider bodyFont={bodyFont} headingFont={headingFont}>
+      <ShopifyProvider
+        storeDomain={process.env.NEXT_PUBLIC_STORE_DOMAIN as string}
+        storefrontToken={
+          process.env.NEXT_PUBLIC_STOREFRONT_API_TOKEN as string
+        }
+        storefrontApiVersion={
+          process.env.NEXT_PUBLIC_SHOPIFY_API_VERSION as string
+        }
+        countryIsoCode="CA"
+        languageIsoCode="EN"
+      >
+        <CartProvider>{children}</CartProvider>
+      </ShopifyProvider>
+    </ChakraUIProvider>
   );
 }
