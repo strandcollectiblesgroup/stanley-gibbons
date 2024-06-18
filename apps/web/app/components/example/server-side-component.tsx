@@ -1,10 +1,10 @@
-import { apolloSanityClient } from "@repo/lib/script/sanity/apollo-sanity-client";
+import { apolloClient } from "@repo/lib/script/apollo/apollo-client";
 import { Box } from "@chakra-ui/react";
-import { DemoProductsDocument } from "@repo/codegen/sanity/types";
+import { HelloDocument } from "@repo/codegen/backend/types";
 
 const getHello = async () => {
-  const { data } = await apolloSanityClient.query({
-    query: DemoProductsDocument,
+  const { data } = await apolloClient.query({
+    query: HelloDocument,
   });
   return data;
 };
