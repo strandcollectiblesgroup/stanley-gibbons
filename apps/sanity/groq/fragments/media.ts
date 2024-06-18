@@ -9,12 +9,12 @@ export const defaultImageFragment = `
       url
     }
   }
-`;
+`
 
 export const defaultVideoFragment = `
   ${defaultImageFragment},
   video
-`;
+`
 
 export const featuredMediaFragment = `
   featuredMedia[0] {
@@ -27,4 +27,4 @@ export const featuredMediaFragment = `
       ${defaultVideoFragment}
     }
   }
-`;
+`

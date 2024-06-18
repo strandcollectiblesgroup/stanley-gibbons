@@ -19,9 +19,7 @@ export function AllProviders({
     <ChakraUIProvider bodyFont={bodyFont} headingFont={headingFont}>
       <ShopifyProvider
         storeDomain={process.env.NEXT_PUBLIC_STORE_DOMAIN as string}
-        storefrontToken={
-          process.env.NEXT_PUBLIC_STOREFRONT_API_TOKEN as string
-        }
+        storefrontToken={process.env.NEXT_PUBLIC_STOREFRONT_API_TOKEN as string}
         storefrontApiVersion={
           process.env.NEXT_PUBLIC_SHOPIFY_API_VERSION as string
         }

@@ -16,10 +16,7 @@ export const featuredMediaType = defineField({
           type: 'dialog',
         },
       },
-      of: [
-        defineArrayMember({type: 'defaultImage'}),
-        defineArrayMember({type: 'defaultVideo'})
-      ],
+      of: [defineArrayMember({type: 'defaultImage'}), defineArrayMember({type: 'defaultVideo'})],
       validation: (Rule) => Rule.max(1).error('Can only add one Media type at a time'),
     }),
   ],

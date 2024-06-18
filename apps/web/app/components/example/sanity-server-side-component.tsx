@@ -4,7 +4,6 @@ import { Demo } from "sanity/sanity.types";
 import { demoPageQuery } from "../../../../sanity/groq";
 import { ClientSideLogger } from "./client-side-logging";
 
-
 export const SanityServerSideComponent: React.FC = async () => {
   // Use the useQuery hook to fetch data
   const [data] = await fetchSanityData<Demo[]>(demoPageQuery);

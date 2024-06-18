@@ -1,6 +1,6 @@
-import { portableTextFragment } from "./portableText"
-import { featuredMediaFragment } from "./media"
-import { defaultButtonQuery } from "./link"
+import {portableTextFragment} from './portableText'
+import {featuredMediaFragment} from './media'
+import {defaultButtonQuery} from './link'
 
 export const mediaAndTextModuleQuery = `
   title,
@@ -11,4 +11,4 @@ export const mediaAndTextModuleQuery = `
   media {
     ${featuredMediaFragment}
   }
-`;
+`

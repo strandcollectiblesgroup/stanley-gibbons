@@ -1,8 +1,8 @@
-import { slugFragment } from "./general"
+import {slugFragment} from './general'
 export const linkExternalFragment = `
   newWindow,
   url
-`;
+`
 
 export const linkInternalFragment = `
   ...reference-> {
@@ -17,7 +17,7 @@ export const linkInternalFragment = `
       ${slugFragment}
     },
   }
-`;
+`
 
 export const defaultButtonQuery = `
   _type,
@@ -33,4 +33,4 @@ export const defaultButtonQuery = `
       ${linkExternalFragment}
     },
   }
-`;
+`

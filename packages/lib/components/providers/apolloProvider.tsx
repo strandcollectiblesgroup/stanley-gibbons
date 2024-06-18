@@ -10,7 +10,5 @@ interface ApolloUIProviderProps {
 export function ApolloUIProvider({
   children,
 }: ApolloUIProviderProps): React.ReactNode {
-  return (
-    <ApolloProvider client={apolloClient}>{children}</ApolloProvider>
-  );
+  return <ApolloProvider client={apolloClient}>{children}</ApolloProvider>;
 }

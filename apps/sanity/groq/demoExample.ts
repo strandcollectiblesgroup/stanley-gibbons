@@ -1,8 +1,8 @@
-import { seoFragment } from "./fragments/seo"
-import { slugFragment } from "./fragments/general"
-import { mediaAndTextModuleQuery } from "./fragments/modules"
+import {seoFragment} from './fragments/seo'
+import {slugFragment} from './fragments/general'
+import {mediaAndTextModuleQuery} from './fragments/modules'
 
-import groq from 'groq';
+import groq from 'groq'
 
 export const demoPageQuery = groq`*[_type == "demo"]{
   _createdAt,
