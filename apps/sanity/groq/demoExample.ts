@@ -1,6 +1,8 @@
 import { mediaAndTextModuleQuery, slugFragment } from "./demoComponents"
 import { seoFragment } from "./seo"
-export const demoPageQuery = `*[_type == "demo"]{
+import groq from 'groq';
+
+export const demoPageQuery = groq`*[_type == "demo"]{
   _createdAt,
   _id,
   _rev,

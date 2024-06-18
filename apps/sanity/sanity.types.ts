@@ -391,7 +391,7 @@ export type MediaAndTextModule = {
 
 export type FeaturedMedia = {
   _type: 'featuredMedia'
-  media?: Array<
+  featuredMedia?: Array<
     | ({
         _key: string
       } & DefaultImage)
@@ -727,3 +727,122 @@ export type HslaColor = {
   a?: number
 }
 export declare const internalGroqTypeReferenceTo: unique symbol
+// Source: ./groq/demoExample.ts
+// Variable: demoPageQuery
+// Query: *[_type == "demo"]{  _createdAt,  _id,  _rev,  _type,  modules[] {    _key,    _type,    _type == "mediaAndTextModule" => {        title,    body[]{    _key,    _type,    children[]{      _key,      _type,      marks,      text    },    markDefs,    style  },  cta {      _type,  buttonStyle,  label,  link[0] {    _key,    _type,    _type == "linkInternal" => {        ...reference-> {    _id,    _type,    _type == "product" => {      store {          "slug": slug.current      }    },    _type != "product" => {        "slug": slug.current    },  }    },    _type == "linkExternal" => {        newWindow,  url    },  }  },  media {      featuredMedia[0] {    _key,    _type,    _type == "defaultImage" => {        image {    _key,    _type,    alt,    asset -> {      _ref,      _type,      url    }  }    },    _type == "defaultVideo" => {          image {    _key,    _type,    alt,    asset -> {      _ref,      _type,      url    }  },  video    }  }  }    }  },  seo {    _type,    image{      _type,      asset->{        _ref,        _type      }    }  },    "slug": slug.current,  title,  _updatedAt}
+export type DemoPageQueryResult = Array<{
+  _createdAt: string
+  _id: string
+  _rev: string
+  _type: 'demo'
+  modules: Array<
+    | {
+        _key: string
+        _type: 'defaultImage'
+      }
+    | {
+        _key: string
+        _type: 'mediaAndTextModule'
+        title: string | null
+        body: Array<
+          | {
+              _key: string
+              _type: 'block'
+              children: Array<{
+                _key: string
+                _type: 'span'
+                marks: Array<string> | null
+                text: string | null
+              }> | null
+              markDefs: Array<
+                | ({
+                    _key: string
+                  } & LinkEmail)
+                | ({
+                    _key: string
+                  } & LinkExternal)
+                | ({
+                    _key: string
+                  } & LinkInternal)
+              > | null
+              style: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'normal' | null
+            }
+          | {
+              _key: string
+              _type: 'defaultImage'
+              children: null
+              markDefs: null
+              style: null
+            }
+        > | null
+        cta: {
+          _type: 'defaultButton'
+          buttonStyle: 'primary' | 'secondary' | null
+          label: string | null
+          link:
+            | {
+                _key: string
+                _type: 'linkExternal'
+                newWindow: boolean | null
+                url: string | null
+              }
+            | {
+                _key: string
+                _type: 'product'
+                _id: string
+                slug: string | null
+                store: {
+                  slug: string | null
+                } | null
+              }
+            | null
+        } | null
+        media: {
+          featuredMedia:
+            | {
+                _key: string
+                _type: 'defaultImage'
+                image: {
+                  _key: null
+                  _type: 'image'
+                  alt: string | null
+                  asset: {
+                    _ref: null
+                    _type: 'sanity.imageAsset'
+                    url: string | null
+                  } | null
+                } | null
+              }
+            | {
+                _key: string
+                _type: 'defaultVideo'
+                image: {
+                  _key: null
+                  _type: 'image'
+                  alt: string | null
+                  asset: {
+                    _ref: null
+                    _type: 'sanity.imageAsset'
+                    url: string | null
+                  } | null
+                } | null
+                video: string | null
+              }
+            | null
+        } | null
+      }
+  > | null
+  seo: {
+    _type: 'seo'
+    image: {
+      _type: 'image'
+      asset: {
+        _ref: null
+        _type: 'sanity.imageAsset'
+      } | null
+    } | null
+  } | null
+  slug: string | null
+  title: string | null
+  _updatedAt: string
+}>

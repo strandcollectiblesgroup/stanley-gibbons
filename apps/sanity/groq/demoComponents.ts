@@ -1,8 +1,6 @@
 
 export const slugFragment = `
-  slug {
-    current
-  }
+  "slug": slug.current
 `;
 
 export const defaultImageFragment = `
