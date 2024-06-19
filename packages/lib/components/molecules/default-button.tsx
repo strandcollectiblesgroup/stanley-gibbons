@@ -4,7 +4,5 @@ interface DefaultButtonProps {
   thing?: string;
 }
 export const DefaultButton: React.FC<DefaultButtonProps> = ({ thing }) => {
-  return (
-    <Box>This is a box - {thing}</Box>
-  );
+  return <Box>This is a box - {thing}</Box>;
 };

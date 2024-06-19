@@ -4,7 +4,5 @@ interface DefaultVideoProps {
   thing?: string;
 }
 export const DefaultVideo: React.FC<DefaultVideoProps> = ({ thing }) => {
-  return (
-    <Box>This is a box - {thing}</Box>
-  );
+  return <Box>This is a box - {thing}</Box>;
 };

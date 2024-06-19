@@ -4,7 +4,5 @@ interface DefaultImageProps {
   thing?: string;
 }
 export const DefaultImage: React.FC<DefaultImageProps> = ({ thing }) => {
-  return (
-    <Box>This is a box - {thing}</Box>
-  );
+  return <Box>This is a box - {thing}</Box>;
 };

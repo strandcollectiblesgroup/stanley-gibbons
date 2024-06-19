@@ -4,7 +4,5 @@ interface LinkInternalProps {
   thing?: string;
 }
 export const LinkInternal: React.FC<LinkInternalProps> = ({ thing }) => {
-  return (
-    <Box>This is a box - {thing}</Box>
-  );
+  return <Box>This is a box - {thing}</Box>;
 };

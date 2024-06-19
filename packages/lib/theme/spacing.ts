@@ -19,4 +19,25 @@ export const spacing = {
   18: "72px",
   19: "76px",
   20: "80px",
+  gridGap: {
+    base: 4,
+    sm: 6,
+    md: 10,
+  },
+  halfGridGap: {
+    base: 2,
+    sm: 3,
+    md: 5,
+  },
+  negativeHalfGridGap: {
+    base: -2,
+    sm: -3,
+    md: -5,
+  },
+  containerPadding: {
+    base: "16px",
+    sm: "50px",
+    md: "80px",
+    lg: "120px",
+  },
 };
