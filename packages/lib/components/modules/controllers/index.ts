@@ -1,1 +1,1 @@
-export * from "./demo-module-controller"
+export * from "./demo-module-controller";
