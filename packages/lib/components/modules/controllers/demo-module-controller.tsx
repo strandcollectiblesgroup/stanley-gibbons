@@ -2,9 +2,14 @@
 
 import { DemoPageQueryResult } from "sanity/sanity.types";
 import { Unpacked } from "@repo/lib/types";
+import {
+  MediaAndTextModule,
+  MediaAndTextModuleProps,
+} from "@repo/lib/components";
 
-// Define props if necessary. For example:
-type Modules = Unpacked<Exclude<DemoPageQueryResult[0], undefined>["modules"]>;
+export type Modules = Unpacked<
+  Exclude<DemoPageQueryResult[0], undefined>["modules"]
+>;
 
 interface DemoModuleControllerProps {
   modules: Modules[];
@@ -15,8 +20,14 @@ export const DemoModuleController: React.FC<DemoModuleControllerProps> = ({
 }) => {
   return modules.map((module) => {
     switch (module?._type) {
+      case "mediaAndTextModule":
+        return (
+          <MediaAndTextModule
+            {...(module as unknown as MediaAndTextModuleProps)}
+          />
+        );
       default:
-        return <>{module?._type}</>;
+        return <p>{module?._type}</p>;
     }
   });
 };

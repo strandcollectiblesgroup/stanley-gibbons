@@ -729,7 +729,7 @@ export type HslaColor = {
 export declare const internalGroqTypeReferenceTo: unique symbol
 // Source: ./groq/demoExample.ts
 // Variable: demoPageQuery
-// Query: *[_type == "demo"]{  _createdAt,  _id,  _rev,  _type,  title,  modules[] {    _key,    _type,    _type == "mediaAndTextModule" => {        title,    body[]{    _key,    _type,    children[]{      _key,      _type,      marks,      text    },    markDefs,    style  },  cta {      _type,  buttonStyle,  label,  link[0] {    _key,    _type,    _type == "linkInternal" => {        ...reference-> {    _id,    _type,    _type == "product" => {      store {          "slug": slug.current      }    },    _type != "product" => {        "slug": slug.current    },  }    },    _type == "linkExternal" => {        newWindow,  url    },  }  },  media {      featuredMedia[0] {    _key,    _type,    _type == "defaultImage" => {        image {    _key,    _type,    alt,    asset -> {      _ref,      _type,      url    }  }    },    _type == "defaultVideo" => {          image {    _key,    _type,    alt,    asset -> {      _ref,      _type,      url    }  },  video    }  }  }    }  },  seo {    _type,    image{      _type,      asset->{        _ref,        _type      }    }  },    "slug": slug.current,}
+// Query: *[_type == "demo"]{  _createdAt,  _id,  _rev,  _type,  title,  modules[] {    _key,    _type,    _type == "mediaAndTextModule" => {        title,    body[]{    _key,    _type,    children[]{      _key,      _type,      marks,      text    },    markDefs,    style  },  cta {      _type,  buttonStyle,  label,  link[] {    _key,    _type,    _type == "linkInternal" => {        reference -> {    _id,    _type,    _type == "product" => {      store {          slug {    current  }      }    },    _type != "product" => {        slug {    current  }    },  }    },    _type == "linkExternal" => {        newWindow,  url    },  }  },  media {      featuredMedia[] {    _key,    _type,    _type == "defaultImage" => {        image {    _key,    _type,    alt,    asset -> {      _ref,      _type,      url,      assetId,      size,      metadata {        dimensions {          height,          width        }      }    }  }    },    _type == "defaultVideo" => {          image {    _key,    _type,    alt,    asset -> {      _ref,      _type,      url,      assetId,      size,      metadata {        dimensions {          height,          width        }      }    }  },  video    }  }  }    }  },  seo {    _type,    image{      _type,      asset->{        _ref,        _type      }    }  },    slug {    current  },}
 export type DemoPageQueryResult = Array<{
   _createdAt: string
   _id: string
@@ -780,7 +780,7 @@ export type DemoPageQueryResult = Array<{
           _type: 'defaultButton'
           buttonStyle: 'primary' | 'secondary' | null
           label: string | null
-          link:
+          link: Array<
             | {
                 _key: string
                 _type: 'linkExternal'
@@ -789,17 +789,40 @@ export type DemoPageQueryResult = Array<{
               }
             | {
                 _key: string
-                _type: 'product'
-                _id: string
-                slug: string | null
-                store: {
-                  slug: string | null
-                } | null
+                _type: 'linkInternal'
+                reference:
+                  | {
+                      _id: string
+                      _type: 'collection'
+                      slug: null
+                    }
+                  | {
+                      _id: string
+                      _type: 'home'
+                      slug: null
+                    }
+                  | {
+                      _id: string
+                      _type: 'page'
+                      slug: {
+                        current: string | null
+                      } | null
+                    }
+                  | {
+                      _id: string
+                      _type: 'product'
+                      store: {
+                        slug: {
+                          current: string | null
+                        } | null
+                      } | null
+                    }
+                  | null
               }
-            | null
+          > | null
         } | null
         media: {
-          featuredMedia:
+          featuredMedia: Array<
             | {
                 _key: string
                 _type: 'defaultImage'
@@ -811,6 +834,14 @@ export type DemoPageQueryResult = Array<{
                     _ref: null
                     _type: 'sanity.imageAsset'
                     url: string | null
+                    assetId: string | null
+                    size: number | null
+                    metadata: {
+                      dimensions: {
+                        height: number | null
+                        width: number | null
+                      } | null
+                    } | null
                   } | null
                 } | null
               }
@@ -825,11 +856,19 @@ export type DemoPageQueryResult = Array<{
                     _ref: null
                     _type: 'sanity.imageAsset'
                     url: string | null
+                    assetId: string | null
+                    size: number | null
+                    metadata: {
+                      dimensions: {
+                        height: number | null
+                        width: number | null
+                      } | null
+                    } | null
                   } | null
                 } | null
                 video: string | null
               }
-            | null
+          > | null
         } | null
       }
   > | null
@@ -843,5 +882,7 @@ export type DemoPageQueryResult = Array<{
       } | null
     } | null
   } | null
-  slug: string | null
+  slug: {
+    current: string | null
+  } | null
 }>

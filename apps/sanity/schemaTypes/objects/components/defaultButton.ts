@@ -26,11 +26,12 @@ export const defaultButtonType = defineField({
       title: 'Button Style',
       name: 'buttonStyle',
       type: 'string',
-      initialValue: 'primary',
+      initialValue: 'ghost',
       options: {
         list: [
-          {title: 'Primary', value: 'primary'},
-          {title: 'Secondary', value: 'secondary'},
+          {title: 'ghost', value: 'ghost'},
+          {title: 'outline', value: 'outline'},
+          {title: 'solid', value: 'solid'},
         ],
         layout: 'radio',
       },

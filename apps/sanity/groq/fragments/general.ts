@@ -1,3 +1,5 @@
 export const slugFragment = `
-  "slug": slug.current
+  slug {
+    current
+  }
 `

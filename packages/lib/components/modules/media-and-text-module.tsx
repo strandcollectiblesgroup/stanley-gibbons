@@ -1,10 +1,32 @@
-import { Box } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
+import { Container, SectionWrapper, FlexGrid, FlexGridColumn } from "../layout";
+import { FeaturedMedia, DefaultButton, PortableText } from "../molecules";
+import { MediaAndTextModule as MediaAndTextModuleType } from "sanity/sanity.types";
 
-interface MediaAndTextModuleProps {
-  thing?: string;
-}
+export interface MediaAndTextModuleProps extends MediaAndTextModuleType {}
 export const MediaAndTextModule: React.FC<MediaAndTextModuleProps> = ({
-  thing,
+  title,
+  cta,
+  media,
 }) => {
-  return <Box>This is a box - {thing}</Box>;
+  return (
+    <SectionWrapper>
+      <Container>
+        {title && (
+          <Heading as="h3" size="xl" textAlign="center">
+            {title}
+          </Heading>
+        )}
+        <FlexGrid>
+          <FlexGridColumn colSpan={{ base: 12, md: 6 }}>
+            <PortableText />
+            <DefaultButton {...cta!} />
+          </FlexGridColumn>
+          <FlexGridColumn colSpan={{ base: 12, md: 6 }}>
+            <FeaturedMedia {...media!} />
+          </FlexGridColumn>
+        </FlexGrid>
+      </Container>
+    </SectionWrapper>
+  );
 };

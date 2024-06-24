@@ -5,7 +5,7 @@ export const linkExternalFragment = `
 `
 
 export const linkInternalFragment = `
-  ...reference-> {
+  reference -> {
     _id,
     _type,
     _type == "product" => {
@@ -23,7 +23,7 @@ export const defaultButtonQuery = `
   _type,
   buttonStyle,
   label,
-  link[0] {
+  link[] {
     _key,
     _type,
     _type == "linkInternal" => {

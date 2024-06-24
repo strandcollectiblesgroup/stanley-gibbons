@@ -6,7 +6,15 @@ export const defaultImageFragment = `
     asset -> {
       _ref,
       _type,
-      url
+      url,
+      assetId,
+      size,
+      metadata {
+        dimensions {
+          height,
+          width
+        }
+      }
     }
   }
 `
@@ -17,7 +25,7 @@ export const defaultVideoFragment = `
 `
 
 export const featuredMediaFragment = `
-  featuredMedia[0] {
+  featuredMedia[] {
     _key,
     _type,
     _type == "defaultImage" => {
