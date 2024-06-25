@@ -1,13 +1,17 @@
 import { Heading } from "@chakra-ui/react";
 import { Container, SectionWrapper, FlexGrid, FlexGridColumn } from "../layout";
 import { FeaturedMedia, DefaultButton, PortableText } from "../molecules";
-import { MediaAndTextModule as MediaAndTextModuleType } from "sanity/sanity.types";
+import {
+  MediaAndTextModule as MediaAndTextModuleType,
+  PortableText as PortableTextType,
+} from "sanity/sanity.types";
 
 export interface MediaAndTextModuleProps extends MediaAndTextModuleType {}
 export const MediaAndTextModule: React.FC<MediaAndTextModuleProps> = ({
   title,
   cta,
   media,
+  body,
 }) => {
   return (
     <SectionWrapper>
@@ -19,7 +23,7 @@ export const MediaAndTextModule: React.FC<MediaAndTextModuleProps> = ({
         )}
         <FlexGrid>
           <FlexGridColumn colSpan={{ base: 12, md: 6 }}>
-            <PortableText />
+            <PortableText text={body as PortableTextType} />
             <DefaultButton {...cta!} />
           </FlexGridColumn>
           <FlexGridColumn colSpan={{ base: 12, md: 6 }}>

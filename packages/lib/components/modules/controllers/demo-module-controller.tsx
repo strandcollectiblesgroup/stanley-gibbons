@@ -23,6 +23,7 @@ export const DemoModuleController: React.FC<DemoModuleControllerProps> = ({
       case "mediaAndTextModule":
         return (
           <MediaAndTextModule
+            key={module._key}
             {...(module as unknown as MediaAndTextModuleProps)}
           />
         );
