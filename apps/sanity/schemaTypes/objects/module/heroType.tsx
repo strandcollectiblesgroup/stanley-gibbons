@@ -21,20 +21,5 @@ export const heroType = defineField({
       of: [{type: 'linkInternal'}, {type: 'linkExternal'}],
       validation: (Rule) => Rule.max(1),
     }),
-    defineField({
-      name: 'content',
-      type: 'array',
-      validation: (Rule) => Rule.max(1),
-      of: [
-        defineArrayMember({
-          name: 'productWithVariant',
-          type: 'productWithVariant',
-        }),
-        defineArrayMember({
-          name: 'imageWithProductHotspots',
-          type: 'imageWithProductHotspots',
-        }),
-      ],
-    }),
   ],
 })

@@ -1,4 +1,5 @@
 import {TagIcon} from '@sanity/icons'
+import {ReactElement, JSXElementConstructor, ReactNode, ReactPortal} from 'react'
 import {defineField} from 'sanity'
 
 export const linkProductType = defineField({
@@ -7,7 +8,20 @@ export const linkProductType = defineField({
   type: 'object',
   icon: TagIcon,
   components: {
-    annotation: (props) => (
+    annotation: (props: {
+      renderDefault: (
+        arg0: any,
+      ) =>
+        | string
+        | number
+        | boolean
+        | ReactElement<any, string | JSXElementConstructor<any>>
+        | Iterable<ReactNode>
+        | ReactPortal
+        | Iterable<ReactNode>
+        | null
+        | undefined
+    }) => (
       <span>
         <TagIcon
           style={{

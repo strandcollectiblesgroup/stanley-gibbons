@@ -1,4 +1,5 @@
 import {EarthGlobeIcon} from '@sanity/icons'
+import {ReactElement, JSXElementConstructor, ReactNode, ReactPortal} from 'react'
 import {defineField} from 'sanity'
 
 export const linkExternalType = defineField({
@@ -7,7 +8,20 @@ export const linkExternalType = defineField({
   type: 'object',
   icon: EarthGlobeIcon,
   components: {
-    annotation: (props) => (
+    annotation: (props: {
+      renderDefault: (
+        arg0: any,
+      ) =>
+        | string
+        | number
+        | boolean
+        | ReactElement<any, string | JSXElementConstructor<any>>
+        | Iterable<ReactNode>
+        | ReactPortal
+        | Iterable<ReactNode>
+        | null
+        | undefined
+    }) => (
       <span>
         <EarthGlobeIcon
           style={{

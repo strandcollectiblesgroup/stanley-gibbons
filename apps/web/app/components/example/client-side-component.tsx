@@ -1,11 +1,11 @@
 "use client";
 
 import { Box } from "@chakra-ui/react";
-import { useDemoProductsQuery } from "@repo/codegen/sanity/hooks";
+import { useHelloQuery } from "@repo/codegen/backend/hooks";
 import { useEffect } from "react";
 
 export const ClientSideComponent: React.FC = () => {
-  const { loading, data, error } = useDemoProductsQuery();
+  const { loading, data, error } = useHelloQuery();
 
   useEffect(() => {
     console.log(data);
